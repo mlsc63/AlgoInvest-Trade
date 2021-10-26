@@ -11,8 +11,8 @@ def open_csv():
         for row in csv_reader:
             if line_count != 0:
                 name.append(row[0])
-                price.append(int(row[1]))
-                profit.append(int(row[2]))
+                price.append(float(row[1]))
+                profit.append(float(row[2]))
             line_count += 1
         return name, price, profit
 
@@ -24,7 +24,6 @@ def brute_force(profit, price, capacity):
     numbers_of_possibility = 2 ** len(profit)
     print('Le nombre de combinaison possible sera de: 2^', len(profit), '=', numbers_of_possibility, 'possibilités')
     combination = []
-
     gain = 0
     # on fait une boucle dans laquelle on va générer la suite binaire par rapport à un nombre
     for num in range(numbers_of_possibility):
