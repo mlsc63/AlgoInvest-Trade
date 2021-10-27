@@ -1,21 +1,21 @@
 import csv
 
 
-def open_csv():
-    with open('../data/dataset1_Python+P7.csv') as csv_file:
+def open_csv(root):
+    with open(root) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         line_count = 0
         data = []
 
-
         for row in csv_reader:
             if line_count != 0:
                 if row[1] != '0.0' and '-' not in row[1] and row[2] != '0.0':
-                    taux = round((float(row[1]) * float(row[2])), 2) *100
+                    taux = round((float(row[1]) * float(row[2])), 2) * 100
                     my_liste = (row[0], float(row[1]), taux, float(row[2]))
                     data.append(my_liste)
             line_count += 1
         return data
+
 
 def sacADos_dynamique(capacite, elements):
     matrice = [[0 for x in range(capacite * 100 + 1)] for x in range(len(elements) + 1)]
@@ -42,13 +42,29 @@ def sacADos_dynamique(capacite, elements):
     return matrice[-1][-1], elements_selection
 
 
-ele = open_csv()
-test1, test2 = sacADos_dynamique(500, ele) 
-euro = 0
-benefice = 0
-for i in test2:
-    print('Name: ', i[0], ' Pice: ', i[1], ' Profit ', i[3])
-    euro += round(i[1], 2)
-    benefice += i[3]
-print(euro)
-print(benefice)
+def start(root):
+    ele = open_csv(root)
+    test1, test2 = sacADos_dynamique(500, ele)
+    euro = 0
+    benefice = 0
+
+    for i in test2:
+        print('Name: ', i[0], ' Price: ', i[1], ' Profit ', i[3])
+        euro += round(i[1], 2)
+        benefice += (i[3] * i[1]) / 100
+    print('La somme totale dépensée est de:', round(euro, 2), '€ et le bénéfice est de:', round(benefice, 2), '€.')
+
+
+while True:
+    file = input('Veuillez choisir un fichier: 1=dataset.csv, 2=dataset1_Python+P7.csv, 3=dataset2_Python+P7.csv')
+    if file == '1':
+        root = '../data/dataset.csv'
+        start(root)
+    elif file == '2':
+        root = '../data/dataset1_Python+P7.csv'
+        start(root)
+    elif file == '3':
+        root = '../data/dataset2_Python+P7.csv'
+        start(root)
+    else:
+        print('Valeur non correct')
