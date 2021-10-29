@@ -21,7 +21,7 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 #### Cloner le repository
 
 - `cd /path/to/put/project/in`
-- `git clone https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git`
+- `https://github.com/mlsc63/Python-OC-Lettings-FR-master.git`
 
 #### Créer l'environnement virtuel
 
