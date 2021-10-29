@@ -40,5 +40,7 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 - `cd /path/to/AlgoInvest-Trade`
 - `source venv/bin/activate`
 - `pip install --requirement requirements.txt`
+- `SacADos-BrutForce/main.py`
+- `optimized/main.py`
 
 
