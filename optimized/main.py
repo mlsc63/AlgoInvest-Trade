@@ -49,7 +49,7 @@ def start(root):
     benefice = 0
 
     for i in test2:
-        print('Name: ', i[0], ' Price: ', i[1], ' Profit ', i[3])
+        print('Name: ', i[0], ' Price: ', i[1], ' Profit ', (i[3] * i[1]) / 100, '€')
         euro += round(i[1], 2)
         benefice += (i[3] * i[1]) / 100
     print('La somme totale dépensée est de:', round(euro, 2), '€ et le bénéfice est de:', round(benefice, 2), '€.')
