@@ -4,9 +4,9 @@
 Algoinvest, permet de définir la meilleure stratégie d'investissement avec une somme définis, et la contraite de ne pouvoir prendre qu'une fois l'action.
 Les fichiers ou les actions sont stockées avec leurs valeurs et leurs profits, sont dans le répértoir data.
 L'algorithme se compose en deux parties et repose sur le problème du sac à dos:
--Première partie -> Brute force: On essaie toutes les combinaisons possibles.
+- Première partie -> Brute force: On essaie toutes les combinaisons possibles.
   L'emnssemble des combinaisons ce calcul par la formule 2^n, soit dans notre exemple 2^20=1048576 combinaisons.
--Deuxiéme partie -> Optimisation, voir la ressource https://fr.wikipedia.org/wiki/Probl%C3%A8me_du_sac_%C3%A0_dos. 
+- Deuxiéme partie -> Optimisation, voir la ressource https://fr.wikipedia.org/wiki/Probl%C3%A8me_du_sac_%C3%A0_dos. 
 
 
 ### Prérequis
