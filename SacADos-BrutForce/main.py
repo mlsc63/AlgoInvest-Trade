@@ -19,7 +19,7 @@ def open_csv():
         return name, price, profit
 
 
-open_csv()
+
 
 
 def brute_force(profit, price, capacity):
@@ -45,6 +45,7 @@ def brute_force(profit, price, capacity):
     return gain, combination
 
 
+start = time.time()
 name, price, profit = open_csv()
 gain, combinaison = brute_force(profit, price, 500)
 print("Voici les actions les plus rentables pour 500€")
@@ -56,3 +57,6 @@ for index, value in enumerate(combinaison):
         total_price = total_price + price[index]
         print('Name:', name[index], ' prix', price[index], 'profit', profit[index], '€')
 print('On dépensera au total:', total_price, '€, et on aura un profit de:', round(total_profit, 2), '€')
+end = time.time()
+elapsed = end - start
+print(f'Temps d\'exécution : ', elapsed, ' secondes.')

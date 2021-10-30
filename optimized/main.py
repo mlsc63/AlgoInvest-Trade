@@ -1,4 +1,5 @@
 import csv
+import time
 
 
 def open_csv(root):
@@ -43,16 +44,22 @@ def sacADos_dynamique(capacite, elements):
 
 
 def start(root):
+    start = time.time()
+
     ele = open_csv(root)
     test1, test2 = sacADos_dynamique(500, ele)
     euro = 0
     benefice = 0
 
     for i in test2:
-        print('Name: ', i[0], ' Price: ', i[1], ' Profit ', (i[3] * i[1]) / 100, '€')
+        print('Name: ', i[0], ' Price: ', i[1], ' Profit ', round((i[3] * i[1]) / 100, 2), '€')
         euro += round(i[1], 2)
         benefice += (i[3] * i[1]) / 100
     print('La somme totale dépensée est de:', round(euro, 2), '€ et le bénéfice est de:', round(benefice, 2), '€.')
+    end = time.time()
+    elapsed = end - start
+
+    print(f'Temps d\'exécution : ', elapsed, ' secondes.')
 
 
 while True:
