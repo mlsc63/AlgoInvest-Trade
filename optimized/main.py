@@ -39,19 +39,18 @@ def sacADos_dynamique(capacite, elements):
             elements_selection.append(e)
             w -= int(e[1] * 100)
         n -= 1
-    print(len(elements_selection))
-    return matrice[-1][-1], elements_selection
+    return elements_selection
 
 
 def start(root):
     start = time.time()
 
     ele = open_csv(root)
-    test1, test2 = sacADos_dynamique(500, ele)
+    elements = sacADos_dynamique(500, ele)
     euro = 0
     benefice = 0
 
-    for i in test2:
+    for i in elements:
         print('Name: ', i[0], ' Price: ', i[1], ' Profit ', round((i[3] * i[1]) / 100, 2), '€')
         euro += round(i[1], 2)
         benefice += (i[3] * i[1]) / 100
